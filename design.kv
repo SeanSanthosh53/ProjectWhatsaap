@@ -1,0 +1,31 @@
+MDBoxLayout:
+	orientation: "vertical"
+
+	MDToolbar:
+		id: main_screen_toolbar
+		title: app.title
+		right_action_items: [["magnify", lambda x: app.inspect("And it is working!")], ["dots-vertical", lambda x: app.show_more()]]
+		md_bg_color: (8/255, 94/255, 85/255, 1)
+		specific_text_color: (1,1,1,1)
+		
+		
+	
+	MDTabs:
+		background_color: (8/255, 94/255, 85/255, 1)
+		id: main_tab
+		tab_indicator_height: "4dp"
+		default_tab: 1
+		text_color_normal: [(0,0,1,1)]
+		color_indicator: [1,1,1,1]
+		
+		Tab:
+			text: "CHATS" 
+			ScrollView:
+				MDList:
+					id: list				
+		Tab:
+			text: "STATUS"
+		Tab:
+			text: "CALLS"
+	   
+
