@@ -9,7 +9,7 @@ item = """
 TwoLineIconListItem:
 	text: "Sj Bros"
 	secondary_text: "Contact"
-	on_press: app.press()
+	on_press: app.press(*args)
 				
 	ImageLeftWidget:
 		source: "result.png"
@@ -42,8 +42,9 @@ class MainApp(MDApp):
 	def show_more(self):
 		self.title = "Wait for more :)"
 		
-	def press(self):
-		print("User tried to open a contact but failed.")
+	def press(self, obj):
+		print(f"contact list: {obj}")
+		#print("User tried to open a contact but failed.")
 
 
 
