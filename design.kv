@@ -1,29 +1,157 @@
-MDBoxLayout:
-	orientation: "vertical"
 
-	MDToolbar:
-		id: main_screen_toolbar
-		title: app.title
-		right_action_items: [["magnify", lambda x: app.inspect("And it is working!")], ["dots-vertical", lambda x: app.show_more()]]
-		md_bg_color: (8/255, 94/255, 85/255, 1)
-		specific_text_color: (1,1,1,1)
+
+#: import CardTransition kivy.uix.screenmanager.CardTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+ScreenManager:
+	id: sm
+	transition: CardTransition()
+	MainScreen:
+		manager: sm
 		
+	SettingsScreen:
+		id: settings
+		manager: sm
 		
+	NewGroupScreen:
+		id: newgroup
+		manager: sm
+
+	NewBrodcastScreen:	
+		id: newbroadcast
+		manager: sm
+
+	WhatsAppWebScreen:		
+		id: whatsappweb
+		manager: sm
+
+	StarredMessagesScreen:	
+		id: starredmessages
+		manager: sm
+
+	PaymentsScreen:		
+		id: payments
+		manager: sm
+
+
+<MainScreen>:
+	name: "main"
+	MDBoxLayout:
+		orientation: "vertical"
 	
-	MDTabs:
-		background_color: (8/255, 94/255, 85/255, 1)
-		id: main_tab
-		tab_indicator_height: "4dp"
-		color_indicator: [1,1,1,1]
+		MDToolbar:
+			id: main_screen_toolbar
+			title: app.title
+			right_action_items: [["magnify", lambda x: app.inspect("And it is working!")]]
+			md_bg_color: (8/255, 94/255, 85/255, 1)
+			specific_text_color: (1,1,1,1)
+			
+			
+			MDIconButton:
+				icon: "dots-vertical"
+				id: more_menu_caller
+				pos_hint: {"center_y": .5}
+				theme_text_color: 'Custom'
+				text_color: 1,1,1,1
+				on_press:
+					root.manager.transition.direction = 'left'
+					app.show_more()
+			
+			
 		
-		Tab:
-			text: "CHATS" 
-			ScrollView:
-				MDList:
-					id: list				
-		Tab:
-			text: "STATUS"
-		Tab:
-			text: "CALLS"
+		MDTabs:
+			background_color: (8/255, 94/255, 85/255, 1)
+			id: main_tab
+			tab_indicator_height: "4dp"
+			color_indicator: [1,1,1,1]
+			
+			Tab:
+				text: "CHATS" 
+				ScrollView:
+					MDList:
+						id: list				
+			Tab:
+				text: "STATUS"
+			Tab:
+				text: "CALLS"
 	   
+
+
+
+
+<SettingsScreen>:
+	name: 'settings'
+	MDLabel:
+		text: 'Profile'
+		halign: 'center'
+	MDRectangleFlatButton:
+		text: 'Back'
+		pos_hint: {'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction = 'right'
+			root.manager.current = "main"
+			
+			
+<NewGroupScreen>:
+	name:'newgroup'
+	MDLabel:
+		text:'NewGroupScreen'
+		halign:'center'
+	MDRectangleFlatButton:
+		text:'Back'
+		pos_hint:{'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction='right'
+			root.manager.current="main"
+
+
+<NewBrodcastScreen>:
+	name:'newbrodcast'
+	MDLabel:
+		text:'New BrodcastScreen'
+		halign:'center'
+	MDRectangleFlatButton:
+		text:'Back'
+		pos_hint:{'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction='right'
+			root.manager.current="main"
+
+
+<WhatsAppWebScreen>:
+	name:'whatsappweb'
+	MDLabel:
+		text:'WhatsAppWebScreen'
+		halign:'center'
+	MDRectangleFlatButton:
+		text:'Back'
+		pos_hint:{'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction='right'
+			root.manager.current="main"
+
+
+<StarredMessagesScreen>:
+	name:'starredmessages'
+	MDLabel:
+		text:'StarredMessagesScreen'
+		halign:'center'
+	MDRectangleFlatButton:
+		text:'Back'
+		pos_hint:{'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction='right'
+			root.manager.current="main"
+
+
+<PaymentsScreen>:
+	name:'payments'
+	MDLabel:
+		text:'PaymentsScreen'
+		halign:'center'
+	MDRectangleFlatButton:
+		text:'Back'
+		pos_hint:{'center_x':0.5,'center_y':0.1}
+		on_press:
+			root.manager.transition.direction='right'
+			root.manager.current="main"
 
