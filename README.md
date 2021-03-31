@@ -1,24 +1,3 @@
-
-<br>
-
-<div align="center">
-  <img src="https://i.ibb.co/mz992rY/Project-Kanban-Logo.png" alt="logo">
-
-  <br>
-  <br>
-
-</div>
-
-# ProjectWhatsaap
-A simple project to practice your Kivy (a python app-development framework) skills with KivyMD. A simple try to clone whatsapp using Kivy.
-anban is structured to address the human tendency to resist change.
-
-Start with what you do now – Understand current processes as they are actually practiced and respect existing roles, responsibilities and job titles.
-Agree to pursue improvement through evolutionary change
-Encourage acts of leadership at every level
-
-
-
 <br>
 
 <div align="center">
@@ -36,6 +15,22 @@ Encourage acts of leadership at every level
 PROJECT KANBAN is a **project progress visualizer** that **increases efficiency** in the work you do!
 
 PROJECT KANBAN uses the **Kanban method** to increase efficiency and get better good results.
+
+**Note:** This Project wa totally made in an android Tablet. This might not work in your computer as expected.
+
+
+## Setting Up, and running the Project.
+As being a Project following following simple concepts, it is very easy to setup the project.
+Just run the following commands in your terminal:
+
+```
+git clone https://github.com/SeanSanthosh53/Project-Kanban
+cd Project-Kanban
+pip install -r requirements.txt
+python main.py
+```
+
+
 
 ### What is the Kanban Method?
 **KANBAN** is a workflow management method for defining, managing and improving services that deliver knowledge work. It aims to visualise your work, maximise efficiency, and improve continuously.
@@ -152,7 +147,7 @@ Each Kanban card that you create has an outer border. The function of the border
 #### Creating a card
 
 1. Open the required Project, and click the Add Card Button in the top right.
-2. Enter the required title and task for the card.
+2. Select the required card category, and Enter the required title and task for the card.
 3. If required, set a due date for the card by clicking the 'Set card due' button.
 4. Click 'CREATE' to create the card.
 
@@ -162,18 +157,30 @@ Each Kanban card that you create has an outer border. The function of the border
 
 #### Deleting a card
 
+1. Click on the Settings button on the card you want to delete.
+2. Click 'Delete Card'
+3. Click 'Confirm' to confirm your action
 
-![Delete a card](https://i.ibb.co/KVmbWPw/Delete-a-Card.gif)
+![Delete a card](https://i.ibb.co/NpsXDKz/Delete-a-Card.gif)
 
 
 #### Editing a card
 
+1. Click on the Settings button on the card you want to delete.
+2. Click 'Edit Card'
+3. Enter the required title/task/ or set a different due date.
+4. Click 'EDIT'
 
-![Edit a Card](https://i.ibb.co/3hF9N7J/Edit-a-Card.gif)
+![Edit a Card](https://i.ibb.co/yk0b7GQ/Edit-a-Card.gif)
 
 
 #### Moving a card from one category to another
 
+1. Click on the **left-right-arrow** button on the card you want to move.
+2. Select the card category you want to move the card to.
+3. The card will be moved to the category you chose.
+
+![Move A Card](https://i.ibb.co/4tJzhyT/Move-Card.gif) 
 
 
 
