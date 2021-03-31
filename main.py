@@ -67,9 +67,8 @@ class MainApp(MDApp):
 
 	def on_start(self):
 		lst = self.root.get_screen("main").ids.list
-		for i in range(1,31):
-			list_item = item
-			lst.add_widget(Builder.load_string(list_item))
+		list_item = item
+		lst.add_widget(Builder.load_string(list_item))
 
 
 
@@ -104,10 +103,6 @@ class MainApp(MDApp):
 		menu = MDDropdownMenu(caller = callfrom, items = menu_items, width_mult = 4, callback = self.menu)
 		return menu
 		
-	
-	
-	def on_stop(self):
-		raise ValueError("Your Program has worked Successfully!")
 
 
 
